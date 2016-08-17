@@ -7,7 +7,5 @@ ADD . /app
 ENV NODE_ENV=production
 
 WORKDIR /app
-# If you have native dependencies, you'll need extra tools
 
-VOLUME [ "/app/data" ]
 CMD [ "node", "./src/index.js" ]
