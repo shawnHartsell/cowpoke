@@ -2,21 +2,18 @@
 	"host": {
 		"port": 8800
 	},
-	"nedb": {
-		"path": "./data"
-	},
 	"slack": {
-		
+    "token": ""
 	},
 	"api": {
-
+    "key": ""
 	},
 	"github": {
 		"owner": "",
 		"token": ""
 	},
 	"docker": {
-		"user": null,
-		"pass": null
+		"user": "",
+		"pass": ""
 	}
 }

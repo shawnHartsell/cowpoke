@@ -88,7 +88,7 @@ function getEnvMock() {
 var channelsList = ["TEST1", "TEST2"];
 
 function getChannelsMock() {
-	 return Promise.resolve(channelsList);
+	return Promise.resolve(channelsList);
 }
 
 var service = {

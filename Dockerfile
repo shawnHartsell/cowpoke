@@ -1,9 +1,16 @@
-FROM mhart/alpine-node:6
-MAINTAINER Alex Robson <asrobson@gmail.com>
+FROM node:6-slim
+MAINTAINER Team Star-Lord
 
-RUN apk add --update bash
+RUN apt-get update && \
+    apt-get install -y jq bash curl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-ADD . /app
+ADD ./config.defaults.json /app/config.defaults.json
+ADD ./node_modules /app/node_modules
+ADD ./src /app/src
+ADD ./resource /app/resource
+
 ENV NODE_ENV=production
 
 WORKDIR /app

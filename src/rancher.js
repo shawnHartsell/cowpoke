@@ -101,7 +101,7 @@ function listStackServices(http, stack) {
 			return result;
 		}, []);
 	});
-};
+}
 
 function listStacks( http, stackUrl) {
 	return http.get( stackUrl ).then( result => {

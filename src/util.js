@@ -1,6 +1,5 @@
 const _ = require( "lodash" );
 const semver = require( "semver" );
-const yaml = require( "js-yaml" );
 const Promise = require( "bluebird" );
 
 function getImageInfo( image ) {
@@ -34,7 +33,7 @@ function getImageInfo( image ) {
 	//Now the branch must be whatever is left
 	const branch = remainingTag;
 
-	if ( ( owner !== "" ) && ( repo !== "" ) && ( branch !== "" ) && ( version !== "" ) 
+	if ( ( owner !== "" ) && ( repo !== "" ) && ( branch !== "" ) && ( version !== "" )
 		&& ( build !== "" ) && ( commit !== "" ) && semver.valid( version ) ) {
 		return {
 			newImage: image,
@@ -81,7 +80,7 @@ function shouldUpgrade( service, newInfo ) {
 		return false;
 	}
 	return isNewerOfSame(info, newInfo);
-	
+
 }
 
 module.exports = {

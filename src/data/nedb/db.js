@@ -2,11 +2,7 @@ const _ = require( "lodash" );
 const path = require( "path" );
 const Promise = require("bluebird");
 const Datastore = require( "nedb" );
-const config = require( "configya" )( {
-	nedb: {
-		path: path.join( process.cwd(), "./data" )
-	}
-}, "./config.json" );
+const config = require("../../config");
 
 function count( api, pattern ) {
 	return api.count( pattern );
@@ -17,9 +13,9 @@ function fetch( api, pattern, map, continuation ) {
 	map = map || (x => x);
 	const op = api.raw.find( pattern ).sort( continuation.sort );
 	const promise = Promise.promisify( op.exec.bind( op ) )().then(list => {
-		return _.map( list, map )
+		return _.map( list, map );
 	});
-	return promise//Promise.try( promise );
+	return promise;
 }
 
 function fetchPage( api, pattern, map, continuation ) {

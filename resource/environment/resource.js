@@ -1,8 +1,6 @@
 
 const integration = require( "./integration" );
-const config = require( "configya" )( {
-	file: "./config.json"
-} );
+const config = require("../../src/config");
 
 function checkAuth( envelope, next ) {
 	const userKey = envelope.headers.bearer;
