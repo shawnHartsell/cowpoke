@@ -7,7 +7,7 @@ APP_VERSION=$(node -e "console.log(require('./package.json').version);")
 #create release tag or testing tag based off the current branch
 DOCKER_TAG=""
 
-if [ $GIT_BRANCH = "master" ]; then
+if [ "$GIT_BRANCH" = "master" ]; then
     DOCKER_TAG="v${APP_VERSION}"
 else
     DOCKER_TAG="${GIT_BRANCH}_${APP_VERSION}"
