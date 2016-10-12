@@ -14,7 +14,7 @@ script:
   - npm run test
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-      echo "building and publishing docker image"
-      echo $(./tag.sh)
+      echo "building and publishing docker image";
+      echo $(./tag.sh);
     fi
 
