@@ -14,11 +14,8 @@ script:
   - npm run test
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-      echo "building and publishing docker image";
-      docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-      DOCKER_TAG=$(./tag.sh);
-      echo "building image ${DOCKER_TAG}";
-      ./build.sh "$DOCKER_TAG";
-      docker push leankit/cowpoke:"$DOCKER_TAG";
+    echo "building and publishing docker image";
+    DOCKER_IMAGE=$(./build.sh);
+    docker push "$DOCKER_IMAGE";
     fi
 
