@@ -19,4 +19,4 @@ else
     fi
 fi
 
-echo $DOCKER_TAG%
+echo $DOCKER_TAG
