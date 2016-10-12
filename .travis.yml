@@ -13,5 +13,5 @@ script:
   - npm run lint
   - npm run test
 after_success:
-  - scripts/build.sh
+  - ./scripts/build.sh
 
