@@ -1,0 +1,14 @@
+sudo: required
+language: node_js
+node_js:
+  - "6"
+install:
+  - npm install
+services:
+  - docker
+script:
+  - npm run lint
+  - npm run test
+after_success:
+  - echo $(./tag.sh)
+
