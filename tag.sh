@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+GIT_BRANCH=$TRAVIS_BRANCH
 GIT_SHORT_COMMIT=$(git rev-parse --short HEAD)
 APP_VERSION=$(node -e "console.log(require('./package.json').version);")
 
