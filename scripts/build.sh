@@ -1,4 +1,5 @@
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    echo "pull request detected, exiting"
     exit 0
 fi
 
