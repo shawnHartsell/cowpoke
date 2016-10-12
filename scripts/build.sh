@@ -1,3 +1,9 @@
+if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    exit 0
+fi
+
+echo "building and publishing docker image";
+
 DOCKER_REPO="leankit/cowpoke"
 GIT_SHORT_COMMIT=$(git rev-parse --short HEAD)
 APP_VERSION=$(node -e "console.log(require('./package.json').version);")

@@ -13,9 +13,5 @@ script:
   - npm run lint
   - npm run test
 after_success:
-  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    echo "building and publishing docker image";
-    DOCKER_IMAGE=$(scripts/build.sh);
-    docker push "$DOCKER_IMAGE";
-    fi
+  - scripts/build.sh
 
